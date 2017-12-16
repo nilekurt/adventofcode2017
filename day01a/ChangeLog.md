@@ -1,4 +1,4 @@
-# Revision history for aoc-day1
+# Revision history for day01a
 
 ## 0.1.0.0  -- YYYY-mm-dd
 

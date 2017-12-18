@@ -1,6 +1,6 @@
 module Main where
 
-import Data.List (all,nub,permutations)
+import Data.List (nub,permutations)
 
 checkPermuts x y = x `elem` permutations y
 

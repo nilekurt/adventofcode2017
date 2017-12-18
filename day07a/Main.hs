@@ -1,12 +1,13 @@
+{-# LANGUAGE OverloadedStrings #-}
 module Main where
 
-import qualified Data.Attoparsec.Text as AP
-import qualified Data.HashMap as M
 import Control.Applicative
-import Data.List (find, foldl', nub)
 import Data.Either (rights)
+import Data.List (find, foldl')
 import Data.Text (Text, pack, unpack)
 import Data.Tree
+import qualified Data.Attoparsec.Text as AP
+import qualified Data.HashMap as M
 
 parseEntry = do
     name <- AP.takeWhile (/= ' ')
@@ -16,8 +17,8 @@ parseEntry = do
     AP.char ')'
     subnames <- AP.option [] (
             AP.skipWhile (/= '>')
-            *> AP.string (pack "> ")
-            *> AP.takeWhile (/= ',') `AP.sepBy` AP.string (pack ", ")
+            *> AP.string "> "
+            *> AP.takeWhile (/= ',') `AP.sepBy` AP.string ", "
             )
     return (name, weight, subnames)
 

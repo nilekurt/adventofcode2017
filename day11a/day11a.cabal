@@ -22,6 +22,6 @@ executable day11a
   build-depends:       base >=4.9 && <4.10,
                        attoparsec,
                        text,
-                       hashtables >= 1.2.2.1
+                       linear
   -- hs-source-dirs:      
   default-language:    Haskell2010
